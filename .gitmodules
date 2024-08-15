@@ -1,0 +1,3 @@
+[submodule "src/meterclip"]
+	path = src/meterclip
+	url = git@github.com:Svtter/meter-clip.git
