@@ -14,7 +14,7 @@ authors = [
 ]
 description = "Open reproduction of consastive language-image pretraining (CLIP) and related."
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.9"
 keywords = ["pytorch", "clip", "image-text", "language-image", "multimodal"]
 license = {text = "MIT"}
 classifiers = [
@@ -41,6 +41,7 @@ dependencies = [
     'tqdm',
     'huggingface-hub',
     'timm',
+    "shareds @ git+ssh://git@github.com/meterhub/shareds.git",
 ]
 dynamic = ["version"]
 
@@ -75,6 +76,9 @@ includes = ["src/open_clip", "src/open_clip_train"]
 [tool.pdm.dev-dependencies]
 dev = [
     "pysocks>=1.7.1",
+    "ipykernel>=6.29.5",
+    "-e file:///${PROJECT_ROOT}/src/meterclip#egg=meterclip",
+    "matplotlib>=3.9.2",
 ]
 [tool.pytest.ini_options]
 testpaths = ['tests']
